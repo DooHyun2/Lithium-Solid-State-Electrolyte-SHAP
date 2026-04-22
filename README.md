@@ -30,7 +30,8 @@ Model performance
 MetricValueTrain R²0.917CV R² (3-fold)0.629 ± 0.185
 
 Results
-<img width="1200" height="1425" alt="shap-importance" src="https://github.com/user-attachments/assets/ea4336ae-6638-4a4f-b69b-735b46d4d304" />
+<img width="1200" height="600" alt="dopant_distribution" src="https://github.com/user-attachments/assets/30a8b57d-6388-450c-b1f6-a4efd8a560e2" />
+
 
 
 Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10, Y: 7, Al: 3).
