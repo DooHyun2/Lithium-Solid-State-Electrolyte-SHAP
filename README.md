@@ -30,18 +30,21 @@ Model performance
 MetricValueTrain R²0.917CV R² (3-fold)0.629 ± 0.185
 
 Results
-<img width="1200" height="600" alt="dopant_distribution" src="https://github.com/user-attachments/assets/ae201838-c15c-414b-b6ab-53c02667d11b" />
+<img width="1200" height="1425" alt="shap-importance" src="https://github.com/user-attachments/assets/ea4336ae-6638-4a4f-b69b-735b46d4d304" />
+
 
 Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10, Y: 7, Al: 3).
 
 
 SHAP Feature Importance (Bar)
-<img width="1200" height="1425" alt="shap-Importance" src="https://github.com/user-attachments/assets/2c7232e2-36a7-4ebd-a366-e00827bdb25d" />
+<img width="1200" height="1425" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
+
 
 
 SHAP Beeswarm Plot
 
-<img width="1200" height="1425" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/7ff96105-e88f-4335-bc58-dffb2e04431b" />
+<img width="1200" height="1425" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/8c176d8b-787d-4868-96d5-f7857a8a8814" />
+
 
 
 Key Findings
