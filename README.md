@@ -57,6 +57,9 @@ SHAP Beeswarm Plot
 
 Zr is the dominant factor: lower Zr content (substituted by dopants) tends to decrease ionic conductivity, while higher Zr retention is associated with improved conductivity.
 
+Note: Zr content reduction reflects the degree of B-site substitution 
+rather than a direct effect of Zr itself.
+
 Li stoichiometry is the second most influential feature, consistent with its direct role as the charge carrier.
 
 Ba and Y rank highly among dopants, though their elevated SHAP importance may partly reflect the small number of samples rather than true physical dominance.
@@ -80,6 +83,12 @@ Expand to larger garnet datasets as more experimental data becomes publicly avai
 Apply Arrhenius correction to include full temperature range
 
 Extend analysis to other electrolyte families (e.g., NASICON, Perovskite)
+
+Add LOOCV for more stable cross-validation on small datasets
+  
+Incorporate physical descriptors (ionic radius, electronegativity) via matminer
+  
+Compare with baseline models (Ridge, GradientBoosting)
 
 
 ## License
