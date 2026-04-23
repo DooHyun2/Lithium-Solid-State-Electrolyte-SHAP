@@ -4,7 +4,7 @@ SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-
 
 <img width="600" height="725" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
 
-Figure 1: SHAP beeswarm plot showing feature contributions to ionic conductivity. Zr and Li dominate, but results are based on N=67 samples — interpret with caution.
+*Figure 1: SHAP beeswarm plot showing feature contributions to ionic conductivity. Zr and Li dominate, but results are based on N=67 samples — interpret with caution.*
 
 ## Background
 This project extends a previous exploratory study using synthetic data (LLZO-XAI) by applying the same SHAP framework to real experimental data. The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
