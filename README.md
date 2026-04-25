@@ -50,20 +50,35 @@ SHAP Feature Importance (Bar)
 <img width="1200" height="1425" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
 
 
+Average SHAP Contribution by Dopant
+<img width="1200" height="750" alt="Contribution" src="https://github.com/user-attachments/assets/9ae311a3-62c5-44aa-8f1e-ec483600e3fa" />
+
+
+
 
 
 ## Key Findings
 
-Zr is the dominant factor: lower Zr content (substituted by dopants) tends to decrease ionic conductivity, while higher Zr retention is associated with improved conductivity.
+Zr is the dominant factor: lower Zr content (substituted by dopants) 
+tends to decrease ionic conductivity, while higher Zr retention is 
+associated with improved conductivity. Note: Zr content reduction 
+reflects the degree of B-site substitution rather than a direct effect 
+of Zr itself.
 
-Note: Zr content reduction reflects the degree of B-site substitution 
-rather than a direct effect of Zr itself.
+Li stoichiometry is the second most influential feature, consistent 
+with its direct role as the charge carrier.
 
-Li stoichiometry is the second most influential feature, consistent with its direct role as the charge carrier.
+Ba and Y rank highly among dopants, though their elevated SHAP 
+importance may partly reflect sample imbalance rather than true 
+physical dominance.
 
-Ba and Y rank highly among dopants, though their elevated SHAP importance may partly reflect the small number of samples rather than true physical dominance.
+Ta ranks lower despite being widely regarded as one of the most 
+effective LLZO dopants — likely due to high variance across 
+Ta-doped samples in this dataset.
 
-Ta, despite being widely regarded as one of the most effective dopants for LLZO, ranks lower — likely due to its high sample count (32) reducing relative variance in the model.
+When isolating dopant-only SHAP contributions, Te, Mg, and Nb show 
+positive average values, while Ba and Ta show negative, suggesting 
+high variance across dopant concentrations in this dataset.
 
 
 ## Limitations
