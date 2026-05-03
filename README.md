@@ -54,6 +54,13 @@ Average SHAP Contribution by Dopant
 <img width="1200" height="750" alt="Contribution" src="https://github.com/user-attachments/assets/9ae311a3-62c5-44aa-8f1e-ec483600e3fa" />
 
 
+<img width="1125" height="750" alt="dependence_Zr_Li" src="https://github.com/user-attachments/assets/edd0eaf7-43f7-4b11-8c6b-77dadc7f4a34" />
+*Figure: Zr content vs. SHAP value, colored by Li stoichiometry. Higher Zr retention is consistently associated with positive SHAP values, indicating improved ionic conductivity.*
+
+
+<img width="1125" height="750" alt="dependence_Zr_Ta" src="https://github.com/user-attachments/assets/6d9937ca-2794-4114-8933-8171c87aa7df" />
+*Figure: Zr content vs. SHAP value, colored by Ta content. Samples with Zr≈0 (high Ta substitution) cluster in the negative SHAP region, suggesting excessive Ta substitution may reduce ionic conductivity.*
+
 
 
 
