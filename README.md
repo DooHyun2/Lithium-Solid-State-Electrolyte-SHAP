@@ -39,6 +39,9 @@ Model performance
 MetricValueTrain R²0.917CV R² (3-fold)0.629 ± 0.185
 
 ## Results
+
+### Dopant Distribution
+
 <img width="1200" height="600" alt="dopant_distribution" src="https://github.com/user-attachments/assets/30a8b57d-6388-450c-b1f6-a4efd8a560e2" />
 
 
@@ -46,13 +49,17 @@ MetricValueTrain R²0.917CV R² (3-fold)0.629 ± 0.185
 Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10, Y: 7, Al: 3).
 
 
-SHAP Feature Importance (Bar)
+
+### SHAP Feature Importance (Bar)
+
 <img width="1200" height="1425" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
 
 
-Average SHAP Contribution by Dopant
+### Average SHAP Contribution by Dopant
+
 <img width="1200" height="750" alt="Contribution" src="https://github.com/user-attachments/assets/9ae311a3-62c5-44aa-8f1e-ec483600e3fa" />
 
+### SHAP Dependence Plots
 
 <img width="1125" height="750" alt="dependence_Zr_Li" src="https://github.com/user-attachments/assets/edd0eaf7-43f7-4b11-8c6b-77dadc7f4a34" />
 
