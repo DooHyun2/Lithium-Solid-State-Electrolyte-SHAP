@@ -72,6 +72,9 @@ Figure: Zr content vs. SHAP value, colored by Li stoichiometry. Higher Zr retent
 
 Figure: Zr content vs. SHAP value, colored by Ta content. Samples with Zr≈0 (high Ta substitution) cluster in the negative SHAP region, suggesting excessive Ta substitution may reduce ionic conductivity.
 
+Note: Samples with Zr≈0 represent fully B-site substituted garnets 
+where Zr is completely replaced, corresponding to the extreme end 
+of the dopant substitution spectrum.
 
 
 
