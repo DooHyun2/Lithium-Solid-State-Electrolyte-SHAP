@@ -3,7 +3,7 @@
 SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-state electrolytes using experimentally measured data.
 
 **Author**: [KIM DUHYUN] ·
-**Related**: [LLZO-XAI predecessor project]([link](https://github.com/DooHyun2/LLZO-XAI))
+**Related**: [LLZO-XAI predecessor project]((https://github.com/DooHyun2/LLZO-XAI))
 
 <img width="600" height="725" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
 
