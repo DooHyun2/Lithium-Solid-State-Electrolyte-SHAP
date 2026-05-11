@@ -34,7 +34,30 @@ Trained a Random Forest Regressor on log(ionic conductivity)
 
 Applied SHAP (TreeExplainer) to interpret feature contributions
 
-Model performance
+## Model performance
+
+| Metric                    | Value             |
+|---------------------------|-------------------|
+| Train R²                  | 0.917             |
+| LOOCV R²                  | 0.698             |
+| LOOCV MAE                 | 0.445 (log10 σ)   |
+| 3-fold CV R² (reference)  | 0.629 ± 0.185     |
+
+LOOCV aggregates leave-one-out predictions across all 67 samples
+
+into a single R², providing a more stable estimate than 3-fold CV
+
+on this small dataset. The Train–LOOCV gap (≈0.22) reflects realistic
+
+generalization without indicating severe overfitting.
+
+<img width="860" height="881" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
+
+*Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units), with one notable outlier near log10 σ ≈ −8 corresponding to an unusually low-conductivity garnet variant.*
+
+
+
+
 
 MetricValueTrain R²0.917CV R² (3-fold)0.629 ± 0.185
 
