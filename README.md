@@ -58,9 +58,6 @@ generalization without indicating severe overfitting.
 
 
 
-
-MetricValueTrain R²0.917CV R² (3-fold)0.629 ± 0.185
-
 ## Results
 
 ### Dopant Distribution
@@ -141,8 +138,6 @@ Expand to larger garnet datasets as more experimental data becomes publicly avai
 Apply Arrhenius correction to include full temperature range
 
 Extend analysis to other electrolyte families (e.g., NASICON, Perovskite)
-
-Add LOOCV for more stable cross-validation on small datasets
   
 Incorporate physical descriptors (ionic radius, electronegativity) via matminer
   
