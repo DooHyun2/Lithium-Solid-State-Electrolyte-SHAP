@@ -5,7 +5,7 @@ SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-
 **Author**: [KIM DUHYUN] ·
 **Related**: [LLZO-Synthetic predecessor project](https://github.com/DooHyun2/LLZO-Synthetic)
 
-<img width="500" height="600" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
+<img width="600" height="700" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
 
 *Figure 1: SHAP beeswarm plot showing feature contributions to ionic conductivity. Zr and Li dominate, but results are based on N=67 samples — interpret with caution.*
 
@@ -54,7 +54,7 @@ on this small dataset. The Train–LOOCV gap (≈0.22) reflects realistic
 
 generalization without indicating severe overfitting.
 
-<img width="860" height="881" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
+<img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
 *Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units), with one notable outlier near log10 σ ≈ −8 corresponding to an unusually low-conductivity garnet variant.*
 
@@ -65,7 +65,7 @@ generalization without indicating severe overfitting.
 
 ### Dopant Distribution
 
-<img width="800" height="400" alt="dopant_distribution" src="https://github.com/user-attachments/assets/30a8b57d-6388-450c-b1f6-a4efd8a560e2" />
+<img width="600" height="300" alt="dopant_distribution" src="https://github.com/user-attachments/assets/30a8b57d-6388-450c-b1f6-a4efd8a560e2" />
 
 
 
@@ -75,22 +75,22 @@ Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10,
 
 ### SHAP Feature Importance (Bar)
 
-<img width="800" height="1100" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
+<img width="600" height="850" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
 
 
 ### Average SHAP Contribution by Dopant
 
-<img width="900" height="630" alt="Contribution" src="https://github.com/user-attachments/assets/9ae311a3-62c5-44aa-8f1e-ec483600e3fa" />
+<img width="600" height="420" alt="Contribution" src="https://github.com/user-attachments/assets/9ae311a3-62c5-44aa-8f1e-ec483600e3fa" />
 
 ### SHAP Dependence Plots
 
-<img width="900" height="650" alt="dependence_Zr_Li" src="https://github.com/user-attachments/assets/edd0eaf7-43f7-4b11-8c6b-77dadc7f4a34" />
+<img width="600" height="420" alt="dependence_Zr_Li" src="https://github.com/user-attachments/assets/edd0eaf7-43f7-4b11-8c6b-77dadc7f4a34" />
 
 
 Figure: Zr content vs. SHAP value, colored by Li stoichiometry. Higher Zr retention is consistently associated with positive SHAP values, indicating improved ionic conductivity.
 
 
-<img width="900" height="650" alt="dependence_Zr_Ta" src="https://github.com/user-attachments/assets/6d9937ca-2794-4114-8933-8171c87aa7df" />
+<img width="600" height="420" alt="dependence_Zr_Ta" src="https://github.com/user-attachments/assets/6d9937ca-2794-4114-8933-8171c87aa7df" />
 
 
 Figure: Zr content vs. SHAP value, colored by Ta content. Samples with Zr≈0 (high Ta substitution) cluster in the negative SHAP region, suggesting excessive Ta substitution may reduce ionic conductivity.
