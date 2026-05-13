@@ -66,7 +66,7 @@ In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× ty
 
 generalization without indicating severe overfitting.
 
-<img width="450" height="461" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
+<img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
 *Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
 
@@ -91,7 +91,7 @@ Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10,
 
 ### SHAP Feature Importance (Bar)
 
-<img width="600" height="850" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
+<img width="460" height="650" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
 
 
 ### Average SHAP Contribution by Dopant
