@@ -66,7 +66,7 @@ In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× ty
 
 generalization without indicating severe overfitting.
 
-<img width="400" height="411" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
+<img width="450" height="461" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
 *Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
 
