@@ -7,7 +7,13 @@ SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-
 
 <img width="600" height="700" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
 
-*Figure 1: SHAP beeswarm plot showing feature contributions to ionic conductivity. Zr and Li dominate, but results are based on N=67 samples — interpret with caution.*
+*Figure 1: SHAP beeswarm plot showing feature contributions to ionic conductivity. 
+
+All 20 element-wise compositional features are displayed for transparency; the signal is concentrated in the top 5 (Zr, Li, Ba, Y, Te), while features below contribute negligibly (|mean SHAP| < 0.05).
+
+Zr's dominant magnitude partly reflects its role as a proxy for B-site substitution — Zr ≈ 0 corresponds to fully substituted garnet variants — rather than a direct chemical effect alone. 
+
+Results are based on N=67 samples interpret as preliminary rankings.*
 
 ## Background
 This project extends a previous exploratory study using synthetic data (LLZO-XAI) by applying the same SHAP framework to real experimental data. The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
@@ -50,13 +56,23 @@ LOOCV aggregates leave-one-out predictions across all 67 samples
 
 into a single R², providing a more stable estimate than 3-fold CV
 
-on this small dataset. The Train–LOOCV gap (≈0.22) reflects realistic
+on this small dataset. The Train–LOOCV gap (≈0.22) is expected given N=67 samples paired with ~20 element-wise compositional features.
+
+Combined with the 3-fold CV variance (±0.185, attributable to small fold sizes of ~22 samples),
+
+SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment,not definitive conclusions. 
+
+In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× typical prediction error
 
 generalization without indicating severe overfitting.
 
 <img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
-*Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units), with one notable outlier near log10 σ ≈ −8 corresponding to an unusually low-conductivity garnet variant.*
+*Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
+
+A mild regression-to-the-mean tendency is visible in the low-conductivity range (log10 σ ≈ −6 to −5), where predictions are systematically slightly higher than actual values — a known behavior on small datasets. 
+
+One notable outlier near log10 σ ≈ −8 corresponds to an unusually low-conductivity garnet variant.*
 
 
 
