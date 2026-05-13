@@ -91,7 +91,17 @@ Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10,
 
 ### SHAP Feature Importance (Bar)
 
-<img width="460" height="650" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
+<img width="450" height="595" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
+
+Figure: Mean |SHAP value| for each element-wise feature. Zr's dominant
+
+magnitude partly reflects its role as a structural proxy — Zr content
+
+varies primarily through B-site substitution by dopants (Ta, Nb, etc.),
+
+so high Zr SHAP captures the substitution gradient rather than an
+
+isolated chemical effect of Zr itself.
 
 
 ### Average SHAP Contribution by Dopant
