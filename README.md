@@ -93,7 +93,12 @@ Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10,
 
 <img width="450" height="595" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
 
-Figure: Mean |SHAP value| for each element-wise feature. Zr's dominant
+
+### Average SHAP Contribution by Dopant
+
+<img width="560" height="630" alt="dopant_shap_with_reliability" src="https://github.com/user-attachments/assets/5fc31631-927e-432e-b208-b5e7493da53f" />
+
+Figure: Mean SHAP value for each element-wise feature. Zr's dominant
 
 magnitude partly reflects its role as a structural proxy — Zr content
 
@@ -103,10 +108,6 @@ so high Zr SHAP captures the substitution gradient rather than an
 
 isolated chemical effect of Zr itself.
 
-
-### Average SHAP Contribution by Dopant
-
-<img width="600" height="420" alt="Contribution" src="https://github.com/user-attachments/assets/9ae311a3-62c5-44aa-8f1e-ec483600e3fa" />
 
 ### SHAP Dependence Plots
 
@@ -131,7 +132,9 @@ of the dopant substitution spectrum.
 
 Zr is the dominant factor: lower Zr content (substituted by dopants) 
 tends to decrease ionic conductivity, while higher Zr retention is 
-associated with improved conductivity. Note: Zr content reduction 
+associated with improved conductivity. 
+
+Note: Zr content reduction 
 reflects the degree of B-site substitution rather than a direct effect 
 of Zr itself.
 
@@ -146,9 +149,9 @@ Ta ranks lower despite being widely regarded as one of the most
 effective LLZO dopants — likely due to high variance across 
 Ta-doped samples in this dataset.
 
-When isolating dopant-only SHAP contributions, Te, Mg, and Nb show 
-positive average values, while Ba and Ta show negative, suggesting 
-high variance across dopant concentrations in this dataset.
+Among adequately sampled dopants (N ≥ 5: Ta, Nb, Ba, Y, Sr, Sb), Nb shows the most positive mean SHAP contribution (+0.0069, N=12), while Ba shows the most negative (−0.0155, N=10). Ta, despite being the most abundant dopant (N=32) and widely regarded as the most effective LLZO dopant in the literature, shows a slightly negative average (−0.0040) in this dataset — likely reflecting confounding from variable processing conditions not captured by compositional features alone.
+
+Note: Several literature-relevant dopants (Al, Ga, Te, Mg, Hf, etc.) appear in fewer than 5 samples in this filtered subset and are shown in the figure with faded bars for transparency, but their averages are not interpreted due to insufficient sample support.
 
 
 ## Limitations
