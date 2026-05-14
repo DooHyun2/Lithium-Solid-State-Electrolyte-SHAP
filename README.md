@@ -169,15 +169,27 @@ Compositional features alone do not capture sintering conditions or grain bounda
 
 ## Future Work
 
-Expand to larger garnet datasets as more experimental data becomes publicly available
 
-Apply Arrhenius correction to include full temperature range
+ Apply Arrhenius correction to incorporate measurements across full 
+ temperature range, expanding usable sample count beyond room-
+ temperature subset.
 
-Extend analysis to other electrolyte families (e.g., NASICON, Perovskite)
-  
-Incorporate physical descriptors (ionic radius, electronegativity) via matminer
-  
-Compare with baseline models (Ridge, GradientBoosting)
+ Incorporate physical descriptors (ionic radius, electronegativity, 
+ oxidation state) via matminer to complement element-wise stoichiometry 
+ features.
+
+ Design targeted experiments with high-Ta / partial-Zr compositions 
+ to disentangle the Zr-Ta confounding identified in this analysis.
+
+ Compare with baseline models (Ridge regression, Gradient Boosting) 
+ to assess model-specific bias in SHAP attribution.
+
+ Extend framework to other electrolyte families (NASICON, Perovskite) 
+ with appropriate family-specific normalization.
+
+ Aggregate larger garnet datasets as more experimental data becomes 
+ publicly available.
+
 
 
 ## License
