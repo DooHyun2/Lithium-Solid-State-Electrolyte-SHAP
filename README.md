@@ -33,6 +33,8 @@ Filter applied: Garnet family, room temperature (15–35°C) → 67 samples
 
 Temperature was restricted to minimize thermal effects on ionic conductivity, isolating the influence of composition and dopant type.
 
+Garnet family was isolated to ensure structural homogeneity; mixing structural families (NASICON, Perovskite) would conflate distinct Li transport mechanisms and invalidate compositional SHAP interpretation.
+
 ## Installation
 
 pip install -r requirements.txt
