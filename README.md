@@ -23,7 +23,9 @@ This project extends a previous exploratory study using synthetic data (LLZO-XAI
 
 Source: The Liverpool Ionics Dataset
 
-Reference: Hargreaves et al., npj Computational Materials (2022)
+Reference: Hargreaves, C.J. et al. A database of experimentally 
+measured lithium solid electrolyte conductivities evaluated 
+with machine learning. npj Computational Materials 9, 9 (2023)
 
 Download: Liverpool Ionics Database (requires agreement to terms of use)
 
