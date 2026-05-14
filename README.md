@@ -126,7 +126,11 @@ Note: Samples with Zr≈0 represent fully B-site substituted garnets
 where Zr is completely replaced, corresponding to the extreme end 
 of the dopant substitution spectrum.
 
+caveat — confounding: Because Zr≈0 samples are necessarily high-Ta (Zr is fully replaced by Ta in those samples), the negative SHAP cluster cannot be unambiguously attributed to Ta excess alone. 
 
+Zr absence and Ta excess are structurally inseparable in this subset, so this plot reflects their combined effect rather than Ta's independent contribution. 
+
+Disentangling the two would require samples with high Ta but partial Zr retention, which are not present in this filtered dataset.
 
 ## Key Findings
 
@@ -138,8 +142,7 @@ Note: Zr content reduction
 reflects the degree of B-site substitution rather than a direct effect 
 of Zr itself.
 
-Li stoichiometry is the second most influential feature, consistent 
-with its direct role as the charge carrier.
+Li stoichiometry ranks second by SHAP magnitude, consistent with its known role as the charge carrier — though the model captures statistical correlation rather than directly demonstrating the underlying transport mechanism.
 
 Ba and Y rank highly among dopants, though their elevated SHAP 
 importance may partly reflect sample imbalance rather than true 
