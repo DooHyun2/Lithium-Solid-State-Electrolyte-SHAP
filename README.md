@@ -1,6 +1,6 @@
 # Lithium Solid State Electrolyte SHAP
 
-SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-state electrolytes using experimentally measured data.
+SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-state electrolytes using experimentally measured data from the Liverpool Ionics Dataset　
 
 **Author**: KIM DUHYUN 
 
