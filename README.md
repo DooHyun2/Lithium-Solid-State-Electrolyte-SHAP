@@ -8,7 +8,7 @@ SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-
 
 <img width="600" height="700" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
 
-*Figure 1: SHAP beeswarm plot showing feature contributions to ionic conductivity. 
+Figure: SHAP beeswarm plot showing feature contributions to ionic conductivity. 
 
 All 20 element-wise compositional features are displayed for transparency; the signal is concentrated in the top 5 (Zr, Li, Ba, Y, Te), while features below contribute negligibly (|mean SHAP| < 0.05).
 
