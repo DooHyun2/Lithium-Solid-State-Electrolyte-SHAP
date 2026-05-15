@@ -17,7 +17,7 @@ Zr's dominant magnitude partly reflects its role as a proxy for B-site substitut
 Results are based on N=67 samples interpret as preliminary rankings.*
 
 ## Background
-This project extends a previous exploratory study using synthetic data (LLZO-XAI) by applying the same SHAP framework to real experimental data. The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
+This project extends a previous exploratory study using synthetic data (LLZO-Synthetic) by applying the same SHAP framework to real experimental data. The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
 
 ## Dataset
 
@@ -37,7 +37,18 @@ Garnet family was isolated to ensure structural homogeneity; mixing structural f
 
 ## Installation
 
+```bash
+# Install dependencies
 pip install -r requirements.txt
+
+# Note: LiIonDatabase.csv must be downloaded from the Liverpool 
+# Ionics Database (link below) and placed in the project root.
+
+# Run the full pipeline
+python save-dopant.py    # train RF, compute LOOCV, generate SHAP plots
+python visualize.py      # additional visualization scripts
+```
+
 
 
 ## Method
@@ -67,9 +78,7 @@ Combined with the 3-fold CV variance (±0.185, attributable to small fold sizes 
 
 SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment,not definitive conclusions. 
 
-In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× typical prediction error
-
-generalization without indicating severe overfitting.
+In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× typical prediction error.
 
 <img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
@@ -98,20 +107,23 @@ Significant sample imbalance exists across dopant types (Ta: 32, Nb: 12, Ba: 10,
 
 <img width="450" height="595" alt="shap-importance" src="https://github.com/user-attachments/assets/de50a8e5-060f-4e3e-bb53-8aefcaca569b" />
 
+Figure: Mean SHAP value for each element-wise feature. Zr's dominant
+magnitude partly reflects its role as a structural proxy — Zr content
+varies primarily through B-site substitution by dopants (Ta, Nb, etc.),
+so high Zr SHAP captures the substitution gradient rather than an
+isolated chemical effect of Zr itself.
+
 
 ### Average SHAP Contribution by Dopant
 
 <img width="560" height="630" alt="dopant_shap_with_reliability" src="https://github.com/user-attachments/assets/5fc31631-927e-432e-b208-b5e7493da53f" />
 
-Figure: Mean SHAP value for each element-wise feature. Zr's dominant
-
-magnitude partly reflects its role as a structural proxy — Zr content
-
-varies primarily through B-site substitution by dopants (Ta, Nb, etc.),
-
-so high Zr SHAP captures the substitution gradient rather than an
-
-isolated chemical effect of Zr itself.
+Figure: Mean SHAP contribution per dopant. Bars with N ≥ 5 (solid)
+are statistically supported; bars with N < 5 (faded) are shown for
+transparency but their averages are not interpreted due to
+small-sample variance. Bar colors indicate sign (blue = positive,
+salmon = negative). LLZO backbone elements (Zr, Li, La, O) are
+excluded as they are not substitutional dopants.
 
 
 ### SHAP Dependence Plots
