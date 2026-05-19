@@ -62,7 +62,6 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 
 | Metric                    | Value             |
 |---------------------------|-------------------|
-| Train R²                  | 0.917             |
 | LOOCV R²                  | 0.698             |
 | LOOCV MAE                 | 0.445 (log10 σ)   |
 | 3-fold CV R² (reference)  | 0.629 ± 0.185     |
