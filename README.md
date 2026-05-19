@@ -16,7 +16,7 @@ Zr's dominant magnitude partly reflects its role as a proxy for B-site substitut
 Results are based on N=67 samples interpret as preliminary rankings.*
 
 ## Background
-This project extends a previous exploratory study using synthetic data (LLZO-Synthetic) by applying the same SHAP framework to real experimental data. The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
+The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
 
 ## Dataset
 
@@ -167,7 +167,7 @@ Ta ranks lower despite being widely regarded as one of the most
 effective LLZO dopants — likely due to high variance across 
 Ta-doped samples in this dataset.
 
-Among adequately sampled dopants (N ≥ 5: Ta, Nb, Ba, Y, Sr, Sb), Nb shows the most positive mean SHAP contribution (+0.0069, N=12), while Ba shows the most negative (−0.0155, N=10). Ta, despite being the most abundant dopant (N=32) and widely regarded as the most effective LLZO dopant in the literature, shows a slightly negative average (−0.0040) in this dataset — likely reflecting confounding from variable processing conditions not captured by compositional features alone.
+Among adequately sampled dopants (N ≥ 5: Ta, Nb, Ba, Y, Sr, Sb), Nb and Ba show contrasting mean SHAP contributions, though the difference is small relative to model uncertainty and should be treated as tentative. Ta, despite being the most abundant dopant (N=32) and widely regarded as the most effective LLZO dopant in the literature, shows a slightly negative average (−0.0040) in this dataset — likely reflecting confounding from variable processing conditions not captured by compositional features alone.
 
 Note: Several literature-relevant dopants (Al, Ga, Te, Mg, Hf, etc.) appear in fewer than 5 samples in this filtered subset and are shown in the figure with faded bars for transparency, but their averages are not interpreted due to insufficient sample support.
 
