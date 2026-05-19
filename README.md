@@ -65,6 +65,9 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 | LOOCV R²                  | 0.698             |
 | LOOCV MAE                 | 0.445 (log10 σ)   |
 | 3-fold CV R² (reference)  | 0.629 ± 0.185     |
+| Ridge baseline            | (Train R²)0.686   |
+
+Ridge Regression was evaluated as a linear baseline; RF outperformed it (Train R² 0.917 vs 0.686), supporting the use of a non-linear model for this dataset.
 
 LOOCV aggregates leave-one-out predictions across all 67 samples
 
@@ -194,9 +197,6 @@ Compositional features alone do not capture sintering conditions or grain bounda
 
  Design targeted experiments with high-Ta / partial-Zr compositions 
  to disentangle the Zr-Ta confounding identified in this analysis.
-
- Compare with baseline models (Ridge regression, Gradient Boosting) 
- to assess model-specific bias in SHAP attribution.
 
  Extend framework to other electrolyte families (NASICON, Perovskite) 
  with appropriate family-specific normalization.
