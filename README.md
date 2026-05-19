@@ -65,7 +65,7 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 | LOOCV R²                  | 0.698             |
 | LOOCV MAE                 | 0.445 (log10 σ)   |
 | 3-fold CV R² (reference)  | 0.629 ± 0.185     |
-| Ridge baseline            | (Train R²)0.686   |
+| Ridge baseline            | 0.686(Train R²)   |
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (Train R² 0.917 vs 0.686), supporting the use of a non-linear model for this dataset.
 
