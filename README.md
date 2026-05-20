@@ -44,7 +44,7 @@ pip install -r requirements.txt
 # Ionics Database (link below) and placed in the project root.
 
 # Run the full pipeline
-python save-dopant.py    # train RF, compute LOOCV, generate SHAP plots
+python save_dopant.py    # train RF, compute LOOCV, generate SHAP plots
 python visualize.py      # additional visualization scripts
 ```
 
