@@ -18,15 +18,11 @@ Results are based on N=67 samples interpret as preliminary rankings.*
 ## Background
 The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
 
-## Dataset
 
-Source: The Liverpool Ionics Dataset
+## Data
+`LiIonDatabase.csv` is included for reproducibility.
 
-Reference: Hargreaves, C.J. et al. A database of experimentally 
-measured lithium solid electrolyte conductivities evaluated 
-with machine learning. npj Computational Materials 9, 9 (2023)
-
-Download: Liverpool Ionics Database (requires agreement to terms of use)
+Hargreaves, C.J. et al. A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning. *npj Computational Materials* **9**, 9 (2023). https://doi.org/10.1038/s41524-022-00951-z
 
 Filter applied: Garnet family, room temperature (15–35°C) → 67 samples
 
@@ -40,8 +36,6 @@ Garnet family was isolated to ensure structural homogeneity; mixing structural f
 # Install dependencies
 pip install -r requirements.txt
 
-# Note: LiIonDatabase.csv must be downloaded from the Liverpool 
-# Ionics Database (link below) and placed in the project root.
 
 # Run the full pipeline
 python save_dopant.py    # train RF, compute LOOCV, generate SHAP plots
