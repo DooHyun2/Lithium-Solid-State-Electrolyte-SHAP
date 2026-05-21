@@ -1,6 +1,7 @@
 # Lithium Solid State Electrolyte SHAP
 
-SHAP-based interpretability analysis of ionic conductivity in garnet-type solid-state electrolytes using experimentally measured data from the Liverpool Ionics Dataset　
+SHAP-based interpretability analysis of ionic conductivity in lithium solid-state electrolytes across multiple structural 
+families (Garnet, NASICON, Perovskite) using experimentally measured data from the Hargreaves database
 
 **Author**: KIM DUHYUN 
 
@@ -16,7 +17,11 @@ Zr's dominant magnitude partly reflects its role as a proxy for B-site substitut
 Results are based on N=67 samples interpret as preliminary rankings.*
 
 ## Background
-The goal is to identify which compositional features most strongly influence ionic conductivity in garnet-type solid-state electrolytes.
+
+The goal is to identify which compositional features most strongly 
+influence ionic conductivity in lithium solid-state electrolytes, 
+with in-depth analysis of garnet-type systems and comparative 
+analysis across NASICON and perovskite-type families.
 
 
 ## Data
@@ -40,6 +45,7 @@ pip install -r requirements.txt
 # Run the full pipeline
 python save_dopant.py    # train RF, compute LOOCV, generate SHAP plots
 python visualize.py      # additional visualization scripts
+python save_nasicon.py   # NASICON family analysis
 ```
 
 
@@ -59,6 +65,14 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 | Garnet     | 0.698    | 0.445                | 0.629 ± 0.185 | 0.686 (Train R²) |
 | NASICON    | 0.433    | 0.760                | —             | —                |
 | Perovskite | 0.272    | 0.696                | —             | —                |
+
+Predictive accuracy decreases with increasing compositional 
+diversity. Garnet yields the highest LOOCV R², consistent with 
+its simpler substitution chemistry (single Zr site).
+
+NASICON 
+and perovskite-type electrolytes show lower accuracy, reflecting 
+stronger compositional constraints and greater structural diversity.
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (Train R² 0.917 vs 0.686), supporting the use of a non-linear model for this dataset.
 
@@ -171,11 +185,6 @@ than an isolated dopant effect.
 <img width="600" height="720" alt="nasicon_reliability" src="https://github.com/user-attachments/assets/4b963c32-ef51-4911-9754-58cc1e50bc1b" />
 
 
-## Cross-Family Comparison
-
-The RF–SHAP pipeline was applied to three electrolyte families from
-the Hargreaves database, each filtered to room temperature (15–35°C).
-
 
 
 
@@ -228,20 +237,17 @@ Compositional features alone do not capture sintering conditions or grain bounda
  Design targeted experiments with high-Ta / partial-Zr compositions 
  to disentangle the Zr-Ta confounding identified in this analysis.
 
- Extend framework to other electrolyte families (NASICON, Perovskite) 
- with appropriate family-specific normalization.
+ Aggregate larger per-family datasets as more experimental 
+ data becomes publicly available.
 
- Aggregate larger garnet datasets as more experimental data becomes 
- publicly available.
-
+NASICON and perovskite analyses revealed limitations of composition-based features under structural constraints; future work should explore physics-informed descriptors (ionic radius, valence, electronegativity) to  improve per-family interpretability.
 
 
-## License
+
+
 
 Code: MIT License
 
-Dataset: University of Liverpool — see terms of use
-Liverpool Ionics Database
 
 Citation: Hargreaves et al., A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning, npj Computational Materials, 2022
 
