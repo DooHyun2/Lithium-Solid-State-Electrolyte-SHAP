@@ -77,7 +77,7 @@ NASICON
 and perovskite-type electrolytes show lower accuracy, reflecting 
 stronger compositional constraints and greater structural diversity.
 
-Ridge Regression was evaluated as a linear baseline; RF outperformed it (Train R² 0.917 vs 0.686), supporting the use of a non-linear model for this dataset.
+Ridge Regression was evaluated as a linear baseline; RF outperformed it (LOOCV R² 0.698 vs 0.475), supporting the use of a non-linear model for this dataset.
 
 LOOCV aggregates leave-one-out predictions across all 67 samples
 
