@@ -33,7 +33,10 @@ Filter applied: Garnet family, room temperature (15–35°C) >>> 67 samples
 
 Temperature was restricted to minimize thermal effects on ionic conductivity, isolating the influence of composition and dopant type.
 
-Each family was analysed independently to preserve structural homogeneity, as mixing families would conflate distinct Li transport mechanisms and invalidate compositional SHAP interpretation.
+Each family was analysed independently to preserve structural 
+homogeneity and mechanism-specific interpretability.
+
+Results are then compared across families to assess how compositional features generalise.
 
 ## Installation
 
