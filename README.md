@@ -4,7 +4,7 @@ SHAP-based interpretability analysis of ionic conductivity in lithium solid-stat
 families (Garnet, NASICON, Perovskite) using experimentally measured data from the Hargreaves database
 
 **Author**: KIM DUHYUN 
-
+**Related**: [LLZO-Synthetic](https://github.com/DooHyun2/LLZO-Synthetic) — SHAP + Bayesian Optimization on synthetic LLZO testbed
 
 <img width="600" height="700" alt="shap_beeswarm" src="https://github.com/user-attachments/assets/5e8e8e19-29d0-45b6-aa59-767d5d0e6fa2" />
 
@@ -14,7 +14,7 @@ All 20 element-wise compositional features are displayed for transparency; the s
 
 Zr's dominant magnitude partly reflects its role as a proxy for B-site substitution — Zr ≈ 0 corresponds to fully substituted garnet variants — rather than a direct chemical effect alone. 
 
-Results are based on N=67 samples interpret as preliminary rankings.*
+Results are based on N=67 samples - interpret as preliminary rankings.*
 
 ## Background
 
@@ -29,7 +29,7 @@ analysis across NASICON and perovskite-type families.
 
 Hargreaves, C.J. et al. A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning. *npj Computational Materials* **9**, 9 (2023). https://doi.org/10.1038/s41524-022-00951-z
 
-Filter applied: Garnet family, room temperature (15–35°C) → 67 samples
+Filter applied: Garnet family, room temperature (15–35°C) >>> 67 samples
 
 Temperature was restricted to minimize thermal effects on ionic conductivity, isolating the influence of composition and dopant type.
 
@@ -90,11 +90,11 @@ In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× ty
 
 <img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
-*Figure: Garnet LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
+Figure: Garnet LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
 
 A mild regression-to-the-mean tendency is visible in the low-conductivity range (log10 σ ≈ −6 to −5), where predictions are systematically slightly higher than actual values — a known behavior on small datasets. 
 
-One notable outlier near log10 σ ≈ −8 corresponds to an unusually low-conductivity garnet variant.*
+One notable outlier near log10 σ ≈ −8 corresponds to an unusually low-conductivity garnet variant.
 
 
 
@@ -176,7 +176,7 @@ interpretability.
 
 <img width="700" height="750" alt="nasicon_shap-importance" src="https://github.com/user-attachments/assets/b05a5d29-fca0-455b-a79d-6fb09be29736" />
 
-**SHAP Contribution by Dopant**  
+### NASICON SHAP Contribution by Dopant
 Among statistically supported dopants (N≥5), Cr and Zr show the
 strongest positive mean SHAP contributions. Al shows negative mean
 SHAP, likely reflecting multicollinearity with Li content rather
@@ -253,6 +253,6 @@ Compositional features alone do not capture sintering conditions or grain bounda
 Code: MIT License
 
 
-Citation: Hargreaves et al., A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning, npj Computational Materials, 2022
+Citation: Hargreaves et al., A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning, npj Computational Materials, 2023
 
 
