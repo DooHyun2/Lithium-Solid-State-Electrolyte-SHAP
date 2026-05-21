@@ -218,7 +218,8 @@ Note: Several literature-relevant dopants (Al, Ga, Te, Mg, Hf, etc.) appear in f
 
 ## Limitations
 
-Garnet subset (N=67) limits generalizability, NASICON (N=154) and Perovskite (N=64) analyses are exploratory and not fully optimised for these families.
+Garnet subset (N=67) limits generalizability and causes cross-validation instability. 
+NASICON (N=154) and Perovskite (N=64) analyses are exploratory and not fully optimised for these families.
 
 Dopant sample imbalance (Ta: 32 vs. Al: 3) may bias SHAP rankings.
 
