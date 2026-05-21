@@ -240,7 +240,8 @@ Compositional features alone do not capture sintering conditions or grain bounda
  Aggregate larger per-family datasets as more experimental 
  data becomes publicly available.
 
-NASICON and perovskite analyses revealed limitations of composition-based features under structural constraints; future work should explore physics-informed descriptors (ionic radius, valence, electronegativity) to  improve per-family interpretability.
+ NASICON and perovskite analyses revealed limitations of composition-based features under structural constraints, future work should explore physics-informed descriptors (ionic radius, valence, electronegativity) to     
+ improve per-family interpretability.
 
 
 
