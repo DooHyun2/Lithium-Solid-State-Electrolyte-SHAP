@@ -33,7 +33,7 @@ Filter applied: Garnet family, room temperature (15–35°C) → 67 samples
 
 Temperature was restricted to minimize thermal effects on ionic conductivity, isolating the influence of composition and dopant type.
 
-Each family was analysed independently to preserve structural homogeneity mixing families would conflate distinct Li transport mechanisms and invalidate compositional SHAP interpretation.
+Each family was analysed independently to preserve structural homogeneity, as mixing families would conflate distinct Li transport mechanisms and invalidate compositional SHAP interpretation.
 
 ## Installation
 
@@ -218,7 +218,7 @@ Note: Several literature-relevant dopants (Al, Ga, Te, Mg, Hf, etc.) appear in f
 
 ## Limitations
 
-Small garnet dataset (N=67) limits generalizability and causes cross-validation instability.
+Garnet subset (N=67) limits generalizability, NASICON (N=154) and Perovskite (N=64) analyses are exploratory and not fully optimised for these families.
 
 Dopant sample imbalance (Ta: 32 vs. Al: 3) may bias SHAP rankings.
 
