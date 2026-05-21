@@ -33,7 +33,7 @@ Filter applied: Garnet family, room temperature (15–35°C) → 67 samples
 
 Temperature was restricted to minimize thermal effects on ionic conductivity, isolating the influence of composition and dopant type.
 
-Garnet family was isolated to ensure structural homogeneity; mixing structural families (NASICON, Perovskite) would conflate distinct Li transport mechanisms and invalidate compositional SHAP interpretation.
+Each family was analysed independently to preserve structural homogeneity mixing families would conflate distinct Li transport mechanisms and invalidate compositional SHAP interpretation.
 
 ## Installation
 
@@ -211,12 +211,14 @@ Ta-doped samples in this dataset.
 
 Among adequately sampled dopants (N ≥ 5: Ta, Nb, Ba, Y, Sr, Sb), Nb and Ba show contrasting mean SHAP contributions, though the difference is small relative to model uncertainty and should be treated as tentative. Ta, despite being the most abundant dopant (N=32) and widely regarded as the most effective LLZO dopant in the literature, shows a slightly negative average (−0.0040) in this dataset — likely reflecting confounding from variable processing conditions not captured by compositional features alone.
 
+Cross-family comparison shows predictive accuracy correlates inversely with compositional diversity (Garnet > NASICON > Perovskite), suggesting composition-based features alone are insufficient for structurally complex families.
+
 Note: Several literature-relevant dopants (Al, Ga, Te, Mg, Hf, etc.) appear in fewer than 5 samples in this filtered subset and are shown in the figure with faded bars for transparency, but their averages are not interpreted due to insufficient sample support.
 
 
 ## Limitations
 
-Small dataset (67 samples) limits generalizability and causes cross-validation instability.
+Small garnet dataset (N=67) limits generalizability and causes cross-validation instability.
 
 Dopant sample imbalance (Ta: 32 vs. Al: 3) may bias SHAP rankings.
 
