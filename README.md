@@ -54,12 +54,11 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 
 ## Model performance
 
-| Metric                    | Value             |
-|---------------------------|-------------------|
-| LOOCV R²                  | 0.698             |
-| LOOCV MAE                 | 0.445 (log10 σ)   |
-| 3-fold CV R² (reference)  | 0.629 ± 0.185     |
-| Ridge baseline            | 0.686(Train R²)   |
+| Family     | LOOCV R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²  | Ridge baseline   |
+|------------|----------|----------------------|---------------|------------------|
+| Garnet     | 0.698    | 0.445                | 0.629 ± 0.185 | 0.686 (Train R²) |
+| NASICON    | 0.433    | 0.760                | —             | —                |
+| Perovskite | 0.272    | 0.696                | —             | —                |
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (Train R² 0.917 vs 0.686), supporting the use of a non-linear model for this dataset.
 
@@ -77,7 +76,7 @@ In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× ty
 
 <img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
-*Figure: LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
+*Figure: Garnet LOOCV parity plot. The model captures the overall trend (R²=0.698, MAE=0.445 in log10 σ units).
 
 A mild regression-to-the-mean tendency is visible in the low-conductivity range (log10 σ ≈ −6 to −5), where predictions are systematically slightly higher than actual values — a known behavior on small datasets. 
 
@@ -143,6 +142,43 @@ caveat — confounding: Because Zr≈0 samples are necessarily high-Ta (Zr is fu
 Zr absence and Ta excess are structurally inseparable in this subset, so this plot reflects their combined effect rather than Ta's independent contribution. 
 
 Disentangling the two would require samples with high Ta but partial Zr retention, which are not present in this filtered dataset.
+
+## NASICON Results
+
+The same RF–SHAP pipeline was applied to NASICON-type electrolytes 
+(N=154, room temperature 15–35°C) from the Hargreaves database.
+
+LOOCV R²=0.433 (vs. Garnet R²=0.698), reflecting greater compositional 
+diversity across substituent types. 
+
+Li and Ti content were excluded from 
+the dopant contribution plot as they are structurally coupled to 
+substituent amounts (Li = 1+x, Ti = 2−x), which limits per-dopant SHAP 
+interpretability.
+
+
+<img width="700" height="711" alt="nasicon_loocv_parity" src="https://github.com/user-attachments/assets/18ac4516-4419-466a-85de-0a0099b9e743" />
+
+
+<img width="700" height="750" alt="nasicon_shap-importance" src="https://github.com/user-attachments/assets/b05a5d29-fca0-455b-a79d-6fb09be29736" />
+
+**SHAP Contribution by Dopant**  
+Among statistically supported dopants (N≥5), Cr and Zr show the
+strongest positive mean SHAP contributions. Al shows negative mean
+SHAP, likely reflecting multicollinearity with Li content rather
+than an isolated dopant effect.
+
+<img width="600" height="720" alt="nasicon_reliability" src="https://github.com/user-attachments/assets/4b963c32-ef51-4911-9754-58cc1e50bc1b" />
+
+
+## Cross-Family Comparison
+
+The RF–SHAP pipeline was applied to three electrolyte families from
+the Hargreaves database, each filtered to room temperature (15–35°C).
+
+
+
+
 
 ## Key Findings
 
