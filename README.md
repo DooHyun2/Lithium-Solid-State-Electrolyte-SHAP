@@ -63,9 +63,9 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 
 ## Model performance
 
-| Family     | LOOCV R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²  | Ridge baseline   |
+| Family     | LOOCV R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²  | Ridge LOOCV R²  |
 |------------|----------|----------------------|---------------|------------------|
-| Garnet     | 0.698    | 0.445                | 0.629 ± 0.185 | 0.686 (Train R²) |
+| Garnet     | 0.698    | 0.445                | 0.629 ± 0.185 | 0.475            |
 | NASICON    | 0.433    | 0.760                | —             | —                |
 | Perovskite | 0.272    | 0.696                | —             | —                |
 
@@ -154,11 +154,13 @@ Note: Samples with Zr≈0 represent fully B-site substituted garnets
 where Zr is completely replaced, corresponding to the extreme end 
 of the dopant substitution spectrum.
 
-caveat — confounding: Because Zr≈0 samples are necessarily high-Ta (Zr is fully replaced by Ta in those samples), the negative SHAP cluster cannot be unambiguously attributed to Ta excess alone. 
+Structural confounding and experimental implication: Because Zr≈0 samples are necessarily high-Ta (Zr is fully replaced by Ta in those samples),the negative SHAP cluster cannot be unambiguously attributed to Ta excess alone. 
 
 Zr absence and Ta excess are structurally inseparable in this subset, so this plot reflects their combined effect rather than Ta's independent contribution. 
 
-Disentangling the two would require samples with high Ta but partial Zr retention, which are not present in this filtered dataset.
+Disentangling the two would require samples with high Ta but partial Zr retention — a composition not present in the current dataset.
+
+This finding directly motivates targeted synthesis: measuring LLZO with high-Ta / partial-Zr compositions would isolate Ta's independent contribution and validate whether the negative SHAP cluster reflects Ta excess, Zr depletion, or their interaction.
 
 ## NASICON Results
 
