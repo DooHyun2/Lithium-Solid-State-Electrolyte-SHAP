@@ -230,6 +230,12 @@ Dopant sample imbalance (Ta: 32 vs. Al: 3) may bias SHAP rankings.
 
 Compositional features alone do not capture sintering conditions or grain boundary effects.
 
+Magpie-based ElementProperty descriptors were added via matminer to complement stoichiometry features. 
+
+LOOCV R² decreased from 0.698 to 0.662 (full 132 features) and 0.645 (6 key descriptors: electronegativity, oxidation state, atomic radius), suggesting that descriptor addition introduces noise rather than signal at N=67.
+
+Feature selection or a larger dataset would be needed for meaningful integration.
+
 ## Attempted 
 
 Arrhenius-based data expansion
