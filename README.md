@@ -230,6 +230,12 @@ Dopant sample imbalance (Ta: 32 vs. Al: 3) may bias SHAP rankings.
 
 Compositional features alone do not capture sintering conditions or grain boundary effects.
 
+## Attempted 
+
+Arrhenius-based data expansion
+
+Arrhenius correction was explored to normalize non-RT measurements to 25°C. However, only 7 compositions lack room-temperature measurements in the Hargreaves garnet subset, and most have single-temperature data points — insufficient to fit the Ea required for reliable extrapolation.
+
 
 ## Future Work
 
