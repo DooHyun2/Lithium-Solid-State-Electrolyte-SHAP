@@ -263,7 +263,10 @@ Arrhenius correction was explored to normalize non-RT measurements to 25°C. How
  NASICON and perovskite analyses revealed limitations of composition-based features under structural constraints, future work should explore physics-informed descriptors (ionic radius, valence, electronegativity) to     
  improve per-family interpretability.
 
+## Outlook
+Despite small per-family sample sizes, consistent patterns emerge across structural families: Zr-site occupancy dominates SHAP rankings in garnet, while Cr and Zr show positive contributions in NASICON — suggesting that B-site substitution chemistry may play a cross-family role in governing ionic conductivity. 
 
+These preliminary signals, if validated with larger datasets and physics-informed descriptors, could inform compositional screening strategies across oxide-based solid electrolyte families.
 
 
 
