@@ -14,7 +14,7 @@ All 20 element-wise compositional features are displayed for transparency; the s
 
 Zr's dominant magnitude partly reflects its role as a proxy for B-site substitution — Zr ≈ 0 corresponds to fully substituted garnet variants — rather than a direct chemical effect alone. 
 
-Results are based on N=67 samples - interpret as preliminary rankings.*
+Results are based on N=67 samples -  should be interpret as preliminary rankings.*
 
 ## Background
 
@@ -89,7 +89,7 @@ Combined with the 3-fold CV variance (±0.185, attributable to small fold sizes 
 
 SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment,not definitive conclusions. 
 
-In linear conductivity units, MAE = 0.445 corresponds to a factor of ≈2.8× typical prediction error.
+In linear conductivity units, MAE = 0.445 corresponds to a typical prediction error of approximately 2.8×
 
 <img width="500" height="511" alt="loocv_parity" src="https://github.com/user-attachments/assets/b3576712-c77e-498f-ae47-7c8be8fdbd38" />
 
