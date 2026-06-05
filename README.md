@@ -65,7 +65,7 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 
 | Family     | LOOCV R² | Grouped LOO R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²     | Ridge LOOCV R²   |
 |------------|----------|----------------------|---------------|------------------|------------------|
-| Garnet     | 0.698    | 0.712                | 0.445         | 0.629 ± 0.185    | 0.475            |
+| Garnet     | 0.698    | 0.584                | 0.445         | 0.629 ± 0.185    | 0.475            |
 | NASICON    | 0.433    | 0.760                | —             | —                |                  |
 | Perovskite | 0.272    | 0.696                | —             | —                |                  |
 
@@ -79,9 +79,9 @@ stronger compositional constraints and greater structural diversity.
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (LOOCV R² 0.698 vs 0.475), supporting the use of a non-linear model for this dataset.
 
-LOOCV aggregates leave-one-out predictions across all 67 samples into a single R², providing a more stable estimate than 3-fold CV on this small dataset. The Train–LOOCV gap (≈0.22) is expected given N=67 samples paired with ~20 element-wise compositional features.
+The garnet subset contains 67 rows but only ~50 unique compositions; approximately 40% of rows share a reduced formula with at least one other row. Row-level LOOCV leaves compositionally identical twins in the training set, making it optimistic for new-composition generalization.
 
-To assess generalization to truly unseen compositions, Grouped LOO was additionally applied — leaving all rows sharing the same composition string out together. Grouped LOO R² = 0.712 is consistent with plain LOOCV R² = 0.698, suggesting the result is not artificially inflated by duplicate compositions in the dataset.
+Grouped LOO — leaving all rows sharing the same reduced formula out together — gives R² = 0.584, approximately 0.11 lower than plain LOOCV R² = 0.698. This gap reflects leakage from duplicate compositions. Grouped LOO R² = 0.584 is the recommended estimate for generalization to unseen compositions; plain LOOCV R² = 0.698 is retained for comparability with prior work.
 
 SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment, not definitive conclusions.
 
