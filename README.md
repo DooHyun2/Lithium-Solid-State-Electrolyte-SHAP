@@ -63,11 +63,11 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 
 ## Model performance
 
-| Family     | LOOCV R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²  | Ridge LOOCV R²  |
-|------------|----------|----------------------|---------------|------------------|
-| Garnet     | 0.698    | 0.445                | 0.629 ± 0.185 | 0.475            |
-| NASICON    | 0.433    | 0.760                | —             | —                |
-| Perovskite | 0.272    | 0.696                | —             | —                |
+| Family     | LOOCV R² | Grouped LOO R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²     | Ridge LOOCV R²   |
+|------------|----------|----------------------|---------------|------------------|------------------|
+| Garnet     | 0.698    | 0.712                | 0.445         | 0.629 ± 0.185    | 0.475            |
+| NASICON    | 0.433    | 0.760                | —             | —                |                  |
+| Perovskite | 0.272    | 0.696                | —             | —                |                  |
 
 Predictive accuracy decreases with increasing compositional 
 diversity. Garnet yields the highest LOOCV R², consistent with 
@@ -79,15 +79,11 @@ stronger compositional constraints and greater structural diversity.
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (LOOCV R² 0.698 vs 0.475), supporting the use of a non-linear model for this dataset.
 
-LOOCV aggregates leave-one-out predictions across all 67 samples
+LOOCV aggregates leave-one-out predictions across all 67 samples into a single R², providing a more stable estimate than 3-fold CV on this small dataset. The Train–LOOCV gap (≈0.22) is expected given N=67 samples paired with ~20 element-wise compositional features.
 
-into a single R², providing a more stable estimate than 3-fold CV
+To assess generalization to truly unseen compositions, Grouped LOO was additionally applied — leaving all rows sharing the same composition string out together. Grouped LOO R² = 0.712 is consistent with plain LOOCV R² = 0.698, suggesting the result is not artificially inflated by duplicate compositions in the dataset.
 
-on this small dataset. The Train–LOOCV gap (≈0.22) is expected given N=67 samples paired with ~20 element-wise compositional features.
-
-Combined with the 3-fold CV variance (±0.185, attributable to small fold sizes of ~22 samples),
-
-SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment,not definitive conclusions. 
+SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment, not definitive conclusions.
 
 In linear conductivity units, MAE = 0.445 corresponds to a typical prediction error of approximately 2.8×
 
