@@ -80,10 +80,6 @@ stronger compositional constraints and greater structural diversity.
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (LOOCV R² 0.698 vs 0.475), supporting the use of a non-linear model for this dataset.
 
-The garnet subset contains 67 rows but only 50 unique compositions; ~40% of rows share a reduced formula with at least one other row. Because the features are composition-only, row-level LOOCV leaves compositionally identical twins in the training set and is therefore optimistic. 
-
-Grouped LOO (holding out all rows sharing a reduced formula) gives R² = 0.584 — about 0.11 below plain LOOCV (0.698). 
-
 The garnet subset contains 67 rows but only 50 unique compositions (~40% share a reduced formula with another row).
 
 Because the features are composition-only, row-level LOOCV leaves compositionally identical twins in the training set and is therefore optimistic.
