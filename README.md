@@ -46,9 +46,10 @@ pip install -r requirements.txt
 
 
 # Run the full pipeline
-python save_dopant.py    # train RF, compute LOOCV, generate SHAP plots
-python visualize.py      # additional visualization scripts
-python save_nasicon.py   # NASICON family analysis
+python save_dopant.py     # train RF, compute LOOCV, generate SHAP plots
+python visualize.py       # additional visualization scripts
+python save_nasicon.py    # NASICON family analysis
+python save_perovskite.py # Perovskite family analysis
 ```
 
 
