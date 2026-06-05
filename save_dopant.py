@@ -1,12 +1,13 @@
 import pandas as pd
 from pymatgen.core import Composition
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import cross_val_score, LeaveOneOut, cross_val_predict
+from sklearn.model_selection import cross_val_score, LeaveOneOut, cross_val_predict, LeaveOneGroupOut
 from sklearn.metrics import r2_score, mean_absolute_error
 import numpy as np
 import shap
 import matplotlib.pyplot as plt
-
+import os
+os.makedirs("figures", exist_ok=True) 
 # Load dataset and skip header rows
 df = pd.read_csv("LiIonDatabase.csv", skiprows=3)
 
@@ -23,7 +24,8 @@ def parse_composition(comp_str):
     try:
         comp = Composition(comp_str)
         return {str(el): amt for el, amt in comp.items()}
-    except:
+    except Exception as e:
+        print(e)
         return {}
 
 comp_df = garnet_rt['composition'].apply(parse_composition)
@@ -34,6 +36,7 @@ X = comp_df
 y = garnet_rt['log_target'].values
 
 # Train RandomForest model
+# n_estimators=100: sufficient for this dataset size (N=67), random_state=42 for reproducibility
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X, y)
 
@@ -52,6 +55,17 @@ loo_mae = mean_absolute_error(y, y_pred_loo)
 print(f"LOOCV R²:       {loo_r2:.3f}")
 print(f"LOOCV MAE:      {loo_mae:.3f}  (log10 σ units)")
  
+# Grouped LOO: leave all rows of same composition out together
+# 67 rows contain ~50 unique compositions; row-level LOOCV is optimistic
+# This evaluates generalization to truly unseen compositions
+groups = garnet_rt['composition'].values
+logo = LeaveOneGroupOut()
+y_pred_grouped = cross_val_predict(model, X, y, cv=logo, groups=groups)
+grouped_r2 = r2_score(y, y_pred_grouped)
+grouped_mae = mean_absolute_error(y, y_pred_grouped)
+print(f"Grouped LOO R²:  {grouped_r2:.3f}  (composition-wise generalization)")
+print(f"Grouped LOO MAE: {grouped_mae:.3f}  (log10 σ units)")
+
 # Parity plot (LOOCV predicted vs actual)
 fig, ax = plt.subplots(figsize=(6, 6))
 ax.scatter(y, y_pred_loo, alpha=0.6, s=40)
@@ -75,13 +89,13 @@ shap_values = explainer.shap_values(X)
 # Save Beeswarm plot
 shap.summary_plot(shap_values, X, show=False)
 plt.tight_layout()
-plt.savefig("shap_beeswarm.png", dpi=150)
+plt.savefig("figures/shap_beeswarm.png", dpi=150)
 plt.close()
 
 # Save bar plot
 shap.summary_plot(shap_values, X, plot_type="bar", show=False)
 plt.tight_layout()
-plt.savefig("shap-importance.png", dpi=150)
+plt.savefig("figures/shap-importance.png", dpi=150)
 plt.close()
 # Average SHAP Contribution by Dopant (all dopants, N annotated, low-N faded)
 
@@ -113,7 +127,7 @@ ax.axvline(0, color='gray', linewidth=0.5)
 ax.set_xlabel("Mean SHAP Value")
 ax.set_title(f"Average SHAP Contribution by Dopant\n(faded bars: N < {RELIABILITY_THRESHOLD}, insufficient statistical support)")
 plt.tight_layout()
-plt.savefig("dopant_shap_with_reliability.png", dpi=200)
+plt.savefig("figures/dopant_shap_with_reliability.png", dpi=150)
 plt.close()
 
 # # Print reliable vs low-N dopant summary
