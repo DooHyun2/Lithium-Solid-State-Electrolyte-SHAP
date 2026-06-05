@@ -83,11 +83,15 @@ The garnet subset contains 67 rows but only 50 unique compositions; ~40% of rows
 
 Grouped LOO (holding out all rows sharing a reduced formula) gives R² = 0.584 — about 0.11 below plain LOOCV (0.698). 
 
-The garnet subset has only 50 unique compositions among 67 rows, so row-level LOOCV leaves identical twins in the training set and is optimistic; the gap quantifies that leakage. Grouped LOO R² = 0.584 is the recommended estimate for unseen-composition generalization (plain LOOCV retained only for comparability). 
+The garnet subset contains 67 rows but only 50 unique compositions (~40% share a reduced formula with another row).
 
-This also reflects a limit of composition-only features, which cannot distinguish processing-dependent σ differences between identical compositions.
+Because the features are composition-only, row-level LOOCV leaves compositionally identical twins in the training set and is therefore optimistic.
 
-Grouped LOO R² = 0.584 is the recommended estimate for unseen-composition generalization, while plain LOOCV R² = 0.698 is retained only for comparability. This duplicate degeneracy — identical composition, differing measured σ — also reflects a fundamental limit of composition-only features, which cannot resolve processing-dependent differences (sintering, grain boundaries) between nominally identical samples.
+Grouped LOO — holding out all rows that share a reduced formula — gives R² = 0.584, about 0.11 below plain LOOCV (0.698); this gap quantifies the leakage from duplicate compositions. 
+
+Grouped LOO R² = 0.584 is the recommended estimate for unseen-composition generalization, while plain LOOCV R² = 0.698 is retained only for comparability.
+
+This degeneracy — identical composition, differing measured σ — also reflects a fundamental limit of composition-only features, which cannot resolve processing-dependent differences (sintering, grain boundaries) between nominally identical samples.
 
 In linear conductivity units, MAE = 0.445 corresponds to a typical prediction error of approximately 2.8×
 
