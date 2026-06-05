@@ -79,11 +79,11 @@ stronger compositional constraints and greater structural diversity.
 
 Ridge Regression was evaluated as a linear baseline; RF outperformed it (LOOCV R² 0.698 vs 0.475), supporting the use of a non-linear model for this dataset.
 
-The garnet subset contains 67 rows but only ~50 unique compositions; approximately 40% of rows share a reduced formula with at least one other row. Row-level LOOCV leaves compositionally identical twins in the training set, making it optimistic for new-composition generalization.
+The garnet subset contains 67 rows but only 50 unique compositions; ~40% of rows share a reduced formula with at least one other row. Because the features are composition-only, row-level LOOCV leaves compositionally identical twins in the training set and is therefore optimistic. 
 
-Grouped LOO — leaving all rows sharing the same reduced formula out together — gives R² = 0.584, approximately 0.11 lower than plain LOOCV R² = 0.698. This gap reflects leakage from duplicate compositions. Grouped LOO R² = 0.584 is the recommended estimate for generalization to unseen compositions; plain LOOCV R² = 0.698 is retained for comparability with prior work.
+Grouped LOO — holding out all rows that share a reduced formula — gives R² = 0.584, about 0.11 below plain LOOCV (0.698); this gap quantifies the leakage from duplicate compositions. 
 
-SHAP feature rankings reported below should be interpreted as preliminary patterns warranting cautious treatment, not definitive conclusions.
+Grouped LOO R² = 0.584 is the recommended estimate for unseen-composition generalization, while plain LOOCV R² = 0.698 is retained only for comparability. This duplicate degeneracy — identical composition, differing measured σ — also reflects a fundamental limit of composition-only features, which cannot resolve processing-dependent differences (sintering, grain boundaries) between nominally identical samples.
 
 In linear conductivity units, MAE = 0.445 corresponds to a typical prediction error of approximately 2.8×
 
