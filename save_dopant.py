@@ -58,7 +58,7 @@ print(f"LOOCV MAE:      {loo_mae:.3f}  (log10 σ units)")
 # Grouped LOO: leave all rows of same composition out together
 # 67 rows contain ~50 unique compositions; row-level LOOCV is optimistic
 # This evaluates generalization to truly unseen compositions
-groups = garnet_rt['composition'].values
+groups = garnet_rt['composition'].apply(lambda x: Composition(x).reduced_formula).values
 logo = LeaveOneGroupOut()
 y_pred_grouped = cross_val_predict(model, X, y, cv=logo, groups=groups)
 grouped_r2 = r2_score(y, y_pred_grouped)
