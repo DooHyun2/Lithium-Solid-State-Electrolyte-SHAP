@@ -1,12 +1,13 @@
 import pandas as pd
 from pymatgen.core import Composition
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import cross_val_score, LeaveOneOut, cross_val_predict
+from sklearn.model_selection import cross_val_score, LeaveOneOut, cross_val_predict, LeaveOneGroupOut
 from sklearn.metrics import r2_score, mean_absolute_error
 import numpy as np
 import shap
 import matplotlib.pyplot as plt
-
+import os
+os.makedirs("figures", exist_ok=True) 
 # Load dataset and skip header rows
 df = pd.read_csv("LiIonDatabase.csv", skiprows=3)
 
@@ -23,8 +24,9 @@ def parse_composition(comp_str):
     try:
         comp = Composition(comp_str)
         return {str(el): amt for el, amt in comp.items()}
-    except:
-        return {}
+    except Exception as e:
+        print(e)
+    return {}
 
 comp_df = nasicon_rt['composition'].apply(parse_composition)
 comp_df = pd.DataFrame(comp_df.tolist()).fillna(0)
@@ -34,6 +36,7 @@ X = comp_df
 y = nasicon_rt['log_target'].values
 
 # Train RandomForest model
+# n_estimators=100: sufficient for this dataset size (N=154), random_state=42 for reproducibility
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X, y)
 
@@ -51,6 +54,11 @@ loo_r2 = r2_score(y, y_pred_loo)
 loo_mae = mean_absolute_error(y, y_pred_loo)
 print(f"LOOCV R²:       {loo_r2:.3f}")
 print(f"LOOCV MAE:      {loo_mae:.3f}  (log10 σ units)")
+
+# Grouped LOO: leave all rows sharing a canonical composition out together
+groups = nasicon_rt['composition'].str.strip().apply(lambda c: Composition(c).reduced_formula).values
+y_pred_grouped = cross_val_predict(model, X, y, cv=LeaveOneGroupOut(), groups=groups)
+print(f"Grouped LOO R²:  {r2_score(y, y_pred_grouped):.3f}  (composition-wise generalization)")
  
 # Parity plot (LOOCV predicted vs actual)
 fig, ax = plt.subplots(figsize=(6, 6))
@@ -88,7 +96,7 @@ plt.close()
 # Sample counts per element
 sample_counts = (X > 0).sum(axis=0)
 
-# Exclude LLZO backbone elements
+# Exclude NASICON backbone elements
 backbone = ['O', 'P', 'Li', 'Ti']
 dopants = [el for el in X.columns if el not in backbone]
 
@@ -113,7 +121,7 @@ ax.axvline(0, color='gray', linewidth=0.5)
 ax.set_xlabel("Mean SHAP Value")
 ax.set_title(f"Average SHAP Contribution by Dopant\n(faded bars: N < {RELIABILITY_THRESHOLD}, insufficient statistical support)")
 plt.tight_layout()
-plt.savefig("figures/nasicon_reliability.png", dpi=200)
+plt.savefig("figures/nasicon_reliability.png", dpi=150)
 plt.close()
 
 # # Print reliable vs low-N dopant summary
