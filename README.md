@@ -66,8 +66,8 @@ Applied SHAP (TreeExplainer) to interpret feature contributions
 | Family     | LOOCV R² | Grouped LOO R² | LOOCV MAE (log₁₀ σ) | 3-fold CV R²     | Ridge LOOCV R²   |
 |------------|----------|----------------------|---------------|------------------|------------------|
 | Garnet     | 0.698    | 0.584                | 0.445         | 0.629 ± 0.185    | 0.475            |
-| NASICON    | 0.433    | 0.760                | —             | —                |                  |
-| Perovskite | 0.272    | 0.696                | —             | —                |                  |
+| NASICON    | 0.433    | —                   | 0.760          | —                |                  |
+| Perovskite | 0.272    | —                   | 0.696          | —                |                  |
 
 Predictive accuracy decreases with increasing compositional 
 diversity. Garnet yields the highest LOOCV R², consistent with 
