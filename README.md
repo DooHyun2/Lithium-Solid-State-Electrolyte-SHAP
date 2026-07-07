@@ -29,7 +29,7 @@ LiIonDatabase.csv is not redistributed here due to the dataset's terms of use �
 
 Hargreaves, C.J. et al. A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning. *npj Computational Materials* **9**, 9 (2023). https://doi.org/10.1038/s41524-022-00951-z
 
-Filter applied: Garnet family, room temperature (15–35°C) >>> 67 samples
+Filter applied: Garnet family, room temperature (15–35°C) -> 67 samples
 
 Temperature was restricted to minimize thermal effects on ionic conductivity, isolating the influence of composition and dopant type.
 
