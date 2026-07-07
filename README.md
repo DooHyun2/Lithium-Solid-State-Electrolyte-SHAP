@@ -25,7 +25,7 @@ analysis across NASICON and perovskite-type families.
 
 
 ## Data
-`LiIonDatabase.csv` is included for reproducibility.
+LiIonDatabase.csv is not redistributed here due to the dataset's terms of use — download it directly from the Liverpool Ionics Database and place it in the project root.
 
 Hargreaves, C.J. et al. A database of experimentally measured lithium solid electrolyte conductivities evaluated with machine learning. *npj Computational Materials* **9**, 9 (2023). https://doi.org/10.1038/s41524-022-00951-z
 
